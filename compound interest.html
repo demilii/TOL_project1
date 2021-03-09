@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Compound Interest</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div class="header"><span>
+        <b>Compound Interest (II)</b></span>
+    </div>
+  <!-- change -->
+    <div class=navbar>
+      <a class="SI1" href="index.html">Simple Interest (I)</a>
+      <a class="SI1" href="simple interest.html">Simple Interest (II)</a>
+      <a class="CI1" href="page3.html">Compound Interest (I)</a>
+      <a class="SI2" href="compound interest.html">Compound Interest (II)</a>
+      <a class="Comparison1" href="page5.html">Comparison (I)</a>
+      <a class="Comparison2" href="Comparison.html">Comparison (II)</a>
+      <a class="Practice" href="page7.html">Practices</a>
+    </div>
+
+<div class="content">
+
+    <div id="case">
+
+    <p><b>Learning objectives:</b></p>
+
+    <ul>
+        <li>Know and use compound interest terminology</li>
+        <li>Know and use the formula for calculating compound interest</li>
+    </ul>
+
+    <p><b>Case Study</b></p>
+    
+    <p>Mrs. Jones and Mrs. Wendi are neighbors and they both want to invest their money into the bank to earn some interest. They both have 1000 dollars as their initial investments, and they learned that the interest rate is 12% for a year. <br/>Mrs. Jones wants to keep a <b>simple interest</b>, and after <b>3 years</b>, she will get <b>$360</b>. So, the total amount Mrs. Jones will get after 3 years would be <b>$1360</b>.</p>
+
+    <p>Unlike Mrs. Jones, Mrs. Wendi wants to keep a <b>compound interest</b>, and after <b>3</b> years she will get <b>$404.93</b> back. <br/> 
+        <br/>Compound interest is the interest calculated on the <b>initial principal</b> of a deposit <b>plus</b> the <b>accumulated interest</b> from prior periods on a loan or deposit. It is also known as <b>interest on interest</b>.
+        <br/> <br/><i>How did we get that answer?</i>
+        <br/> <br/>To calculate the compound interest of Mrs. Wendi, we need to know her <b>principal (initial deposit)</b>, <b>interest rate</b>, and <b>time</b>.
+        <br/>So, the formula of compound interest is A = P(1 + r)<sup>n</sup>, while I = A - P. Let’s use this formula to see how we get the number of the compound interest for Mrs. Jones: 
+    </p>
+
+    <table border="1" align="center">
+        <tr>
+            <td><u><b><div align="center">COMPOUND INTEREST</b></u></div>
+                <br/><div align="center">A = <font color="#3DD84F">P</font>(1 + <font color="#C70039">r</font>)<sup><font color="#FF5733">n</font></sup>
+                <br/><font color="337BFF">I</font> = A - <font color="#3DD84F">P</font></div></td>
+        </tr>
+        <tr>
+            <td><p>A = Amount <i>(future value; include original amount + interest)</i>
+              <br/><font color="#3DD84F">P</font> = <font color="#3DD84F">Principal <i>(initial deposit)</i></font>
+              <br/><font color="#C70039">r</font> = <font color="#C70039">interest rate</font>
+              <br/><font color="#FF5733">n</font> = <font color="#FF5733">time <i>(years)</i></font>
+              <br/><font color="337BFF">I</font> = <font color="337BFF">Interest</font>
+        </tr>
+        <tr>
+            <td><b>Compound interest for Mrs. Wendi:</b>
+              <br/> <br/>A = ??
+              <br/><font color="#3DD84F">P</font> = <font color="#3DD84F">$1000</font>
+              <br/><font color="#C70039">r</font>=<font color="#C70039">12%</font>=<font color="#C70039">0.12</font>
+              <br/><font color="#FF5733">n</font> = <font color="#FF5733">3</font>
+              <br/> <br/>A = <font color="#3DD84F">1000</font>*(1+<font color="#C70039">0.12</font>)<sup><font color="#FF5733">3</font></sup> = $1404.93
+              <br/><font color="337BFF">I</font> = 1404.93 - <font color="#3DD84F">1000</font> = <font color="337BFF">$404.93</font></td>
+        </tr>
+    </table>
+
+    <p>After learning the formula of compound interest, let’s take a look at the growing trend of compound interest:</p>
+
+    <center><img src="images/compound-interest.png" alt="Compound Interest gragh:Exponential relationship."></center>
+
+    <p>According to the graph above, compound interest is an <b>exponential function</b> because it grows by <b>equal factors</b> over <b>equal intervals</b>. When you put money in a compound interest-earning account and leave it alone, your money will grow. If you add more money, then you’re really making your money work for you. Because now you’re not only earning interest on the original amount, you’re earning interest on your interest. It’s almost like magic!</p>
+
+    <p><b>Learning by doing:</b></p>
+
+    <p>Calculate the total amount of money that we need to pay back for a $2500 loan with a compounding interest rate of 20%. The duration of the loan is 2 years.</p>
+
+    <form>
+        <input type="radio" name="question"  id="_choiceA" value="$1600">A. $1600<br/>
+        <input type="radio" name="question"  id="_choiceB" value="$2600">B. $2600<br/>
+        <input type="radio" name="question"  id="_choiceC" value="$3600">C. $3600<br/>
+        <input type="radio" name="question"  id="_choiceD" value="$4600">D. $4600
+        <div  class = "feedback" id="feedback"></div>
+    </form>
+
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="script7.js"></script>
+</body>
+
+</html>
+
+

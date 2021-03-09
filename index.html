@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Simple and compound interest rate</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+	<div class="header">
+		<span><b>Simple Interest (I)</b></span>
+	</div>
+	<div class=navbar>
+		<a class="SI1" href="index.html">Simple Interest (I)</a>
+		<a class="SI2" href="simple interest.html">Simple Interest (II)</a>
+		<a class="CI1" href="page3.html">Compound Interest (I)</a>
+		<a class="CI2" href="compound interest.html">Compound Interest (II)</a>
+		<a class="Comparison1" href="page5.html">Comparison (I)</a>
+		<a class="Comparison2" href="Comparison.html">Comparison (II)</a>
+		<a class="Practice" href="page7.html">Practices</a>
+	</div>
+	<div class="content">
+		<!-- Learning Objectives -->
+		<div id="case">
+			<div id="Learning Objectives">
+				<h2>Learning objectives</h2>
+				<p>Students will be able to:</p>
+				<ul>
+					<li>Explain the definition of simple interest and compound interest</li>
+					<li>Calculate and compare simple interest and compound interest earnings </li>
+					<li>Apply the formula of simple interest and compound interest into real-world problems</li>
+				</ul>
+			</div>
+			<!-- Case study -->
+			<div id="case study">
+				<h2>Case Study</h2>
+				<p>Mrs. Jones and Mrs. Wendi are neighbors and they both want to invest their money into the bank to
+					earn some
+					interest. They both have 1000 dollars as their initial investments, and they learned that the
+					interest rate
+					is 12% for a year. Mrs. Jones chose to save with simple interest. The graph shows Mrs. Jones savings
+					after three years.
+				</p>
+				<div class="charts" id="charts">
+					<!-- add in js -->
+				</div>
+				<!-- <br><img src="images/1.jpeg" alt="Mrs.Jones' Savings using simple interest" width="770" height="600"><br> -->
+				<p>Answer the following questions:</p>
+				<ol>
+					<li>
+						The initial principal investment for Mrs.Jones is $ <input type="number" id="initial_principal"
+							name="initial_principal" required size="5"> .
+					</li>
+					<div class="feedback" id="fb1"></div>
+
+					<li>
+						The interest rate that is added on to the amount Mrs. Jones invested is <input type="text"
+							id="interest_rate" name="interest_rate" required size="5"> .
+					</li>
+					<div class="feedback" id="fb2"></div>
+
+					<li>
+						The length of time this interest rate accumulates is <input type="number" id="time"
+							name="time" required size="5"> year.
+					</li>
+					<div class="feedback" id="fb3"></div>
+
+					<li>
+						Mrs. Jones wants to keep a simple interest, and after 3 years, how much money will she earn
+						based on the graph? Can you explain the phenomenon?
+						<textarea class="txa" rows="10" cols="70" id="myTextArea2"></textarea></br>
+						<button type="button" onclick="check3()">Submit</button>
+						<div class="feedback" id="fb4"></div>
+					</li>
+
+					<li>
+						After 3 years, Mrs.Jones will have $1360 in total in her bank account. Could you expand your
+						explanation or build on the formula you created in the previous question to get a possible new
+						formula for the final amount of money Mrs.Jones gets? <br>
+						<textarea class="txa" rows="10" cols="70" id="myTextArea3"></textarea></br>
+						<button type="button" onclick="check4()">Submit</button>
+						<div class="feedback" id="fb5"></div>
+					</li>
+
+				</ol>
+
+			</div>
+		</div>
+
+
+
+		<!-- Step 5
+		<div id="comparison of simple interest and compound interest">
+			<h2>Comparison of Simple Interest and Compound Interest</h2>
+			<p>From the previous case, Mrs. Jones wants to keep a simple interest, and after three years, she will get 360 dollars. Mrs. Wendi wants to keep a compound interest, and after three years she will get 404.93 dollars back. </p>
+			<p> i) For Mrs. Jones, she earns (  ) dollars each month.<br>
+				<input type = "radio" type = "mc" name = "choice" value = "A.12"> A.12
+				<input type = "radio" type = "mc" name = "choice" value = "B.36"> B.36
+				<input type = "radio" type = "mc" name = "choice" value = "C.30"> C.30
+				<br><button type="button" onclick ="submitAnswer()">Submit</button><br><div id="feedback_4"></div>
+
+			<p> For Mrs. Wendi, she earns (  ) dollars each month.</p><br>
+				<input type = "radio" type = "mc" name = "choice" value = "A.33.74"> A.33.74
+				<input type = "radio" type = "mc" name = "choice" value = "B.11.25"> B.11.25
+				<input type = "radio" type = "mc" name = "choice" value = "C.35.8"> C.35.8
+				<br><button type="button" onclick ="submitAnswer_2()">Submit</button><br>
+			
+			<p>ii) Based on the graph showing how Mrs. Jones and Mrs. Wendi’s savings grow, what are the interests of Mrs. Jones and Mrs. Wendi in the first year? What about the second year? The third year?</p>
+			<textarea id = "ti_1" rows="10" cols="50"></textarea><br>
+			<button type="button">Submit</button><br>
+
+			
+			<p>iii) Try with the interactive graph, what features do you find about the interest grow through time?</p>
+			<textarea id = "ti_2" rows="10" cols="50"></textarea><br>
+			<button type="button">Submit</button><br> -->
+
+		<script src="https://d3js.org/d3.v6.min.js"></script>
+		<script type="text/javascript" src="assignment_1.js"></script>
+</body>
+
+</html>

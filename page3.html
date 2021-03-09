@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Compound</title>
+</head>
+
+<body>
+    <div class="header"><span>
+            <b>Compound Interest (I)</b></span>
+    </div>
+    <div class=navbar>
+        <a class="SI1" href="index.html">Simple Interest (I)</a>
+        <a class="SI2" href="simple interest.html">Simple Interest (II)</a>
+        <a class="CI1" href="page3.html">Compound Interest (I)</a>
+        <a class="CI2" href="compound interest.html">Compound Interest (II)</a>
+        <a class="Comparison1" href="page5.html">Comparison (I)</a>
+        <a class="Comparison2" href="Comparison.html">Comparison (II)</a>
+        <a class="Practice" href="page7.html">Practices</a>
+    </div>
+    <!-- main contents here -->
+    <div class="content">
+        <div id="case">
+            <p>Let's take a look at the previous case again.</p>
+            <p>Mrs. Jones and Mrs. Wendi are neighbors and they both want to invest their money into the bank to earn
+                some interest. They both have 1000 dollars as their initial investments, and they learned that the
+                interest rate is 12% for a year.
+                <br>Unlike Mrs. Jones, Mrs. Wendi wants to keep a compound interest, the graph shows her savings after
+                three years. </p>
+            <div class="charts" id="charts">
+                <!-- add in js -->
+            </div>
+            <p>Answer the following questions:</p>
+            <ol>
+                <li>
+                    The initial principal investment for Mrs.Wendi is $ <input type="number" id="initial_principal"
+                        name="initial_principal" required size="5"> .
+                </li>
+                <div class="feedback" id="fb1"></div>
+
+                <li>
+                    How much interest will Mrs. Wendi earn in the first year? Explain how you calculate the interest.
+                    <div class="feedback" id="fb1"></div>
+                    <textarea class="txa" rows="10" cols="70" id="myTextArea1"></textarea></br>
+                    <button type="button" onclick="check2()">Submit</button>
+                    <div class="feedback" id="fb2"></div>
+                </li>
+                <li>
+                    How much interest will Mrs. Wendi earn in the second year? Explain how you calculate the interest.
+                    <textarea class="txa" rows="10" cols="70" id="myTextArea2"></textarea></br>
+                    <button type="button" onclick="check3()">Submit</button>
+                    <div class="feedback" id="fb3"></div>
+                </li>
+                <li>
+                    How much interest will Mrs. Wendi earn in the third year? Explain how you calculate the interest.
+                    <textarea class="txa" rows="10" cols="70" id="myTextArea3"></textarea></br>
+                    <button type="button" onclick="check4()">Submit</button>
+                    <div class="feedback" id="fb4"></div>
+                </li>
+                <li>
+                    Could you explain or find the pattern of how the interest grows each year, and try to find a formula
+                    to calculate the interest based on the previous questions?
+                    <textarea class="txa" rows="10" cols="70" id="myTextArea4"></textarea></br>
+                    <button type="button" onclick="check5()">Submit</button>
+                    <div class="feedback" id="fb5"></div>
+                </li>
+            </ol>
+        </div>
+
+
+
+    </div>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script type="text/javascript" src="script3.js"></script>
+</body>
+
+</html>

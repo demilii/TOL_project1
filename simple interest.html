@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple Interest</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" type="text/css" href="style2.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="header"><span>
+      <b>Simple Interest (II)</b></span>
+  </div>
+<!-- change -->
+  <div class=navbar>
+    <a class="SI1" href="assignment_1.html">Simple Interest (I)</a>
+    <a class="SI2" href="simple interest.html">Simple Interest (II)</a>
+    <a class="CI1" href="page3.html">Compound Interest (I)</a>
+    <a class="CI2" href="compound interest.html">Compound Interest (II)</a>
+    <a class="Comparison1" href="page5.html">Comparison (I)</a>
+    <a class="Comparison2" href="Comparison.html">Comparison (II)</a>
+    <a class="Practice" href="page7.html">Practices</a>
+  </div>
+  <!-- add content id div -->
+  <div class="content">
+    <!-- add case id div -->
+    <div id="case">
+      <p><b>Learning objectives:</b></p>
+
+      <ul>
+        <li>Know and use simple interest terminology</li>
+        <li>Know and use the formula for calculating simple interest</li>
+      </ul>
+
+      <p><b>Case Study</b></p>
+
+      <p>Mrs. Jones and Mrs. Wendi are neighbors and they both want to invest their money into the bank to earn some
+        interest. They both have 1000 dollars as their initial investments, and they learned that the interest rate is
+        12%
+        for a year. <br />Mrs. Jones wants to keep a <b>simple interest</b>, and after <b>3 years</b>, she will get
+        <b>$360</b>. So, the total amount Mrs. Jones will get after 3 years would be <b>$1360</b>.</p>
+
+      <p><i>How did we get that answer?</i> <br /> <br />Simple interest is a quick and easy method of calculating the
+        interest charge on a loan. Simple Interest can be defined as the sum paid back for using the borrowed money,
+        over
+        a
+        <b>fixed</b> period of time. To calculate the simple interest of Mrs. Jones, we need to know her <b>investment,
+          interest rate,</b> and <b>time</b>.<br /> <br />So, the formula of Simple interest is I = prt. Let’s use this
+        formula to see how we get the number of the simple interest for Mrs. Jones: </p>
+
+      <table border="1" align="center">
+        <tr>
+          <td><u><b>
+                <div align="center">SIMPLE INTEREST
+              </b></u>
+    </div><br />
+    <div align="center">
+      <font color="#FFBD33">I</font> = <font color="#C70039">p</font>
+      <font color="337BFF">r</font>
+      <font color="#3DD84F">t</font>
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td>
+        <font color="#FFBD33">I</font> = <font color="#FFBD33">interest</font>
+        <br />
+        <font color="#C70039">p</font> = <font color="#C70039">investment</font>
+        <br />
+        <font color="337BFF">r</font> = <font color="337BFF">interest rate</font>
+        <br />
+        <font color="#3DD84F">t</font> = <font color="#3DD84F">time (years)</font>
+        <br />A = Amount (future value; include original amount + interest)
+      </td>
+    </tr>
+    <tr>
+      <td><b>Simple interest for Mrs. Jones:</b>
+        <br /> <br />
+        <font color="#FFBD33">I</font> = <font color="#FFBD33">??</font>
+        <br />
+        <font color="#C70039">p</font> = <font color="#C70039">1000</font>
+        <br />
+        <font color="337BFF">r</font>=<font color="337BFF">12%</font>=<font color="337BFF">0.12</font>
+        <br /> <br />
+        <font color="#3DD84F">t</font> = <font color="#3DD84F">3</font>
+        <br />
+        <font color="#FFBD33">I</font> = <font color="#C70039">1000</font>*<font color="337BFF">0.12</font>*<font
+          color="#3DD84F">3</font> = <font color="#FFBD33">$360</font>
+        <br />A = 1000 + 360 = $1360
+      </td>
+    </tr>
+    </table>
+
+    <p>Let’s take a look at the growing trend of a simple interest:</p>
+
+    <center><img src="images/simple-interest-graph.jpg" alt="Simple Interest gragh: Linear relationship."></center>
+
+    <p>The graph shows a <b>linear relationship</b> between time and interest. Simple interest is a linear function
+      because it grows by <b>equal difference</b> over <b>equal intervals</b>.</p>
+
+    <p><b>Learning by doing:</b></p>
+
+    <p>Jack wants to buy a new car, he needs to borrow $20,000 for 5 years at a rate of 10% per annum. What will Jack’s
+      repayments be? Leave your answer below by using the formula.</p>
+
+    <textarea rows="10" cols="70" id = "myTextArea"></textarea><br />
+    <!-- change -->
+    <button type="button" onclick ="check()">Submit</button>
+   <!-- add feedback -->
+    <div class = "feedback" id="feedback">
+<!-- add in js -->
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="script2.js"></script>
+</body>
+
+</html>

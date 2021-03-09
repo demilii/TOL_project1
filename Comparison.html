@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Comparison study</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">  
+  </head>
+
+  <body>
+    <div class="header"><span>
+      <b>Comparison (II)</b></span>
+  </div>
+<!-- change -->
+  <div class=navbar>
+    <a class="SI1" href="index.html">Simple Interest (I)</a>
+    <a class="SI1" href="simple interest.html">Simple Interest (II)</a>
+    <a class="CI1" href="page3.html">Compound Interest (I)</a>
+    <a class="CI2" href="compound interest.html">Compound Interest (II)</a>
+    <a class="Comparison1" href="page5.html">Comparison (I)</a>
+    <a class="SI2" href="Comparison.html">Comparison (II)</a>
+    <a class="Practice" href="page7.html">Practices</a>
+  </div>
+  <!-- add content id div -->
+  <div class="content">
+    <!-- add case id div -->
+    <div id="case">
+
+    <p><b>Learning objectives:</b></p>
+
+    <ul>
+        <li>Understand the difference between simple and compound interest.</li>
+        <li>Understand the difference between linear and exponential</li>
+    </ul>
+
+    <p>After learning the simple interest and compound interest separately, now let’s bring them together to see the differences between these two.</p><br/>
+
+    <p>First, let’s take a look at the graph below, what difference did you notice?</p>
+
+    <p>Yes, as we learned previously, simple interest follows the <b>linear function</b> while compound interest follows the <b>exponential function</b>. Because the simple interest grows by <b>equal differences over equal intervals</b>, while the compound interest grows by <b>equal factors over equal intervals</b>.</p>
+    
+    <center><img src="images/simple-vs-compound.png" alt="Simple vs. Compound Interest."></center>
+
+    <p>Next, let’s recall back the example of Mrs. Jones and Mrs. Wendi. They both have the same amount of deposit, same interest rate, and same years. But in the end, Mrs. Wendi got <b>$404.93</b> interest while Mrs. Jones got <b>$360</b> interest. Combining with the graph above, what conclusion can you get for the difference between simple and compound interest?</p>
+
+    <p>I guess you’ve already got the right answer. Yes, Compound interest will grow at a <b>faster</b> pace than simple interest, which is calculated on the principal amount only.</p>
+
+    <p>Last but not least, according to the definition of simple interest and compound interest, the main difference between these two is that Simple interest is computed on the principal amount or loan amount over a <b>fixed period of time</b> whereas compound interest is computed based on the principal amount as well as the interest accumulated on a schedule that could be <b>daily, monthly, annually or even continuously</b>.</p>
+
+    <p><b>Learning by doing:</b></p>
+
+    <p>Do you think compound interest always brings higher benefits than simple interest in a certain period of time? Try the different numbers in the dynamic graph and leave your thoughts below.</p>
+
+    <!--interactive graph should be added here -->
+    
+    <textarea rows="10" cols="70" id = "myTextArea"></textarea><br />
+  
+    <button type="button" onclick ="check()">Submit</button>
+ 
+    <div class = "feedback" id="feedback">
+
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="script6.js"></script>
+</body>
+
+</html>
