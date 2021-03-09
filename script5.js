@@ -4,30 +4,34 @@ function compound_interest(n) {
     for (let i = 0; i < n; i++) {
         principal = principal * 1.12;
     }
-    return principal.toFixed(3);
+    return principal.toFixed(2);
 }
 // calculate the simple interest
 function simple_interest(n) {
     let principal = 1000;
     principal += principal * 0.12 * n;
-    return principal.toFixed(3);
-  }
-  
+    return principal.toFixed(2);
+}
+
 // create the dataset to visualize
-let ydata0, ydata1, ydata2, ydata3;
+let ydata0, ydata1, ydata2, ydata3, ydata4, ydata5, ydata6, ydata7;
 y_data0 = compound_interest(0);
 y_data1 = compound_interest(1);
 y_data2 = compound_interest(2);
 y_data3 = compound_interest(3);
-let data = [{ time: 0, savings: y_data0 },
-{ time: 1, savings: y_data1 },
-{ time: 2, savings: y_data2 },
-{ time: 3, savings: y_data3 }
+y_data4 = simple_interest(0);
+y_data5 = simple_interest(1);
+y_data6 = simple_interest(2);
+y_data7 = simple_interest(3);
+let data = [{ time: 0, jones: y_data4, wendi: y_data0 },
+{ time: 1, jones: y_data5, wendi: y_data1 },
+{ time: 2, jones: y_data6, wendi: y_data2 },
+{ time: 3, jones: y_data7, wendi: y_data3 }
 ]
 
 
 //data visualization of the chart
-let w = 560;
+let w = 800;
 let h = 400;
 let padding = 50;
 
@@ -39,9 +43,9 @@ let viz = d3.select("#charts")
     .style("margin", "auto"); //center the vis
 viz.append("text")
     .attr("text-align", "center")
-    .attr("font-size", "20px")
-    .attr("transform", "translate(187,15)")
-    .text("Mrs. Wendi's Savings");
+    .attr("font-size", "15px")
+    .attr("transform", "translate(300,15)")
+    .text("Mrs. Jones' & Wendi's Savings");
 let allNames = data.map(function (d) { return d.time; });
 let xScale = d3.scaleBand()
     .domain(allNames)
@@ -49,6 +53,7 @@ let xScale = d3.scaleBand()
     .paddingInner(0.3)
     ;
 // create a visual axis corresponding to the scale.
+// reference:https://www.d3-graph-gallery.com/graph/barplot_grouped_basicWide.html
 let xAxis = d3.axisBottom(xScale);
 let xAxisGroup = viz.append("g")
     .classed("xAxis", true);
@@ -70,7 +75,7 @@ let yMin = d3.min(data, function (d) { return d.savings; });
 
 yDomain = [yMin / 2, yMax + 100];
 let yScale = d3.scaleLinear()
-    .domain(yDomain)
+    .domain([500, 1500])
     .range([h - padding * 2, 0]);
 
 let yAxis = d3.axisLeft(yScale);
@@ -89,56 +94,86 @@ yAxisGroup.selectAll("text")
     .attr("font-size", 12);
 yAxisGroup.attr("transform", "translate(" + 2 * padding + "," + padding + ")");
 
+// another scale for subgroup position
+var xSubgroup = d3.scaleBand()
+    .domain(['jones', 'wendi'])
+    .range([0, xScale.bandwidth()])
+    .padding([0.01]);
 
-let graphGroup = viz.append("g")
-    .classed("graphGroup", true);
-let elementsForPage = graphGroup.selectAll(".datapoint")
-    .data(data);
+var color = d3.scaleOrdinal()
+    .domain(['jones', 'wendi'])
+    .range(['#377eb8', '#4daf4a']);
 
-// console.log(elementsForPage);
-let enteringElements = elementsForPage.enter();
-let exitingElements = elementsForPage.exit();
-let enteringDataGroups = enteringElements.append("g")
-    .classed("datapoint", true);
-enteringDataGroups.attr("transform", function (d, i) {
-    return "translate(" + xScale(d.time) + "," + (h - padding) + ")"
-});
+change(data);
 
-enteringDataGroups.append("rect")
-    .attr("class", "bar")
-    .attr("width", function () {
-        // the scaleBand we are using
-        // allows us to as how thick each band is:
-        return xScale.bandwidth() - 20;
-    })
+function change(data) {
+    viz.append("g")
+        .selectAll("g")
+        .data(data)
+        .enter()
+        .append("g")
+        .attr("transform", function (d) { return "translate(" + xScale(d.time) + "," + (h - padding) + ")"; })
+        .selectAll("rect")
+        .data(function (d) { return ['jones', 'wendi'].map(function (key) { return { key: key, value: d[key] }; }); })
+        .enter().append("rect")
+        .attr("x", function (d) { return xSubgroup(d.key); })
+        .attr("y", function (d, i) {
+            // ...and then push the bar up since it
+            // is drawn from top to bottom
+            // console.log(d);
+            return -h + padding * 2 + yScale(d.value);
+        })
+        .attr("width", xSubgroup.bandwidth())
+        .attr("height", function (d) { return h - yScale(d.value) - padding * 2; })
+        .attr("fill", function (d) { return color(d.key); });
 
-    .attr("height", function (d, i) {
-        // the idea is that we make the bar
-        // as high as dictated by the value...
-        return h - yScale(d.savings) - padding * 2;
-    })
+    viz.append("circle")
+        .attr("cx", 710)
+        .attr("cy", 40)
+        .attr("r", 3)
+        .style("fill", "#377eb8")
+    viz.append("circle")
+        .attr("cx", 710)
+        .attr("cy", 60)
+        .attr("r", 3)
+        .style("fill", '#4daf4a')
+    viz.append("text")
+        .attr("x", 720)
+        .attr("y", 40)
+        .text("Jones")
+        .style("font-size", "10px")
+        .attr("alignment-baseline", "middle")
+    viz.append("text")
+        .attr("x", 720)
+        .attr("y", 60)
+        .text("Wendi")
+        .style("font-size", "10px")
+        .attr("alignment-baseline", "middle")
 
-    .attr("x", 10)
+    viz.append("g")
+        .selectAll("g")
+        .data(data)
+        .enter()
+        .append("g")
+        .attr("transform", function (d) { return "translate(" + xScale(d.time) + "," + (h - padding) + ")"; })
+        .selectAll("text")
+        .data(function (d) { return ['jones', 'wendi'].map(function (key) { return { key: key, value: d[key] }; }); })
+        .enter().append("text")
+        .attr("x", function (d) { console.log(xSubgroup(d.key)); return xSubgroup(d.key); })
+        .attr("y", function (d, i) {
+            // ...and then push the bar up since it
+            // is drawn from top to bottom
+            // console.log(d);
+            // console.log(-h + padding * 2 + yScale(d.value))
+            return -h + padding * 2 + yScale(d.value) - 5;
+        })
+        .text(function (d) {
+            return '$' + d.value;  // Value of the text
+        })
+        .attr("font-size", 12)
+        .attr("fill", "black");
+}
 
-    .attr("y", function (d, i) {
-        // ...and then push the bar up since it
-        // is drawn from top to bottom
-        return -h + padding * 2 + yScale(d.savings);
-    })
-    .attr("fill", "#b5ced7")
-    ;
-
-enteringDataGroups.append("text")
-    .attr("x", 10)
-    .attr("y", function (d, i) {
-        // ...and then push the bar up since it
-        // is drawn from top to bottom
-        return -h + padding * 2 + yScale(d.savings) - 8;
-    }).text(function (d) {
-        return '$' + d.savings;  // Value of the text
-    })
-    .attr("font-size", 10)
-    .attr("fill", "black");
 
 // check the answer
 document.getElementsByName("jones")[0].addEventListener("change", check);
