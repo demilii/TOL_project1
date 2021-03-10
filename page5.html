@@ -31,10 +31,14 @@
     <div class="content">
         <div id="case">
             <p>Let's take a look at the previous case again.</p>
-            <p>From the previous case, <br>Mrs. Jones wants to keep a simple interest, and after three years, she will get 360 dollars.<br>Mrs. Wendi wants to keep a compound interest, and after three years she will get 404.93 dollars back. </p>
+            <p>From the previous case, <br>Mrs. Jones wants to keep a simple interest, and after three years, she will
+                get 360 dollars.<br>Mrs. Wendi wants to keep a compound interest, and after three years she will get
+                404.93 dollars back. </p>
             <div class="charts" id="charts">
                 <!-- add in js -->
             </div>
+            <div id= "slider"><input type="range" min="3" max="15" value="3" class="slider" id="myRange"></div>
+            <div id = "val"><center><p>value: </p></center></div>
             <p>Answer the following questions:</p>
             <ol>
                 <li>
@@ -42,9 +46,9 @@
                         <option value="" selected></option>
                         <option value="same">same</option>
                         <option value="different">different</option>
-                        </select>
-                         dollars each month.
-                         <div class="feedback" id="fb1"></div>
+                    </select>
+                    dollars each month.
+                    <div class="feedback" id="fb1"></div>
 
                 </li>
 
@@ -53,12 +57,13 @@
                         <option value="" selected></option>
                         <option value="same">same</option>
                         <option value="different">different</option>
-                        </select>
-                         dollars each month.
+                    </select>
+                    dollars each month.
                     <div class="feedback" id="fb2"></div>
                 </li>
                 <li>
-                    Based on the graph showing how Mrs. Jones and Mrs. Wendi’s savings grow, what are the interests of Mrs. Jones and Mrs. Wendi in the first year? What about the second year? The third year?
+                    Based on the graph showing how Mrs. Jones and Mrs. Wendi’s savings grow, what are the interests of
+                    Mrs. Jones and Mrs. Wendi in the first year? What about the second year? The third year?
                     <textarea class="txa" rows="10" cols="70" id="myTextArea2"></textarea></br>
                     <button type="button" onclick="check3()">Submit</button>
                     <div class="feedback" id="fb3"></div>
